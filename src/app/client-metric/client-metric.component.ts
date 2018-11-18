@@ -8,8 +8,8 @@ import { DataService } from '../data.service';
 })
 export class ClientMetricComponent implements OnInit {
 
-  dataKeys: any[];
-  selectedKeys: any[];
+  dataKeys: any[] = [];
+  selectedKeys: any[] = [];
   dataObj: any;
   constructor(private dataService: DataService) { }
 
@@ -23,6 +23,6 @@ export class ClientMetricComponent implements OnInit {
         },
         (error) => {
           console.log(error);
-        });        
+        });
   }
 }

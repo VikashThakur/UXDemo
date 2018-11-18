@@ -1,11 +1,10 @@
 <div class="card shadow-lg mb-3">
   <div class="card-header text-white bg-primary">
-
   </div>
   <div class="card-body">
     <mat-form-field>
-      <mat-select placeholder="Choose sections">
-        <mat-option *ngFor="let key of dataKeys" [(ngModel)]="selectedKeys" [value]="key">
+      <mat-select placeholder="Choose sections" [(ngModel)]="selectedKeys" multiple>
+        <mat-option *ngFor="let key of dataKeys" [value]="key">
           {{key}}
         </mat-option>
       </mat-select>
@@ -13,7 +12,7 @@
   </div>
 </div>
 <div *ngFor="let key of dataKeys">
-  <div class="card shadow-lg mb-3">
+  <div class="card shadow-lg mb-3" [hidden]="selectedKeys.indexOf(key) === -1">
     <div class="card-header text-white bg-primary">
       {{key}}
     </div>
